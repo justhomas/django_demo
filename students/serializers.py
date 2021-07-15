@@ -4,7 +4,7 @@ from .models import Student
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ('name','qualification','percentage')
+        fields = ('id','name','qualification','percentage')
 
     def validate_percentage(self,value):
         if value >100:

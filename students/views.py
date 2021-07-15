@@ -10,9 +10,9 @@ class StudentList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.is_valid(raise_exception=True)
         serializer.save()
-    permission_classes=[permissions.IsAuthenticatedOrReadOnly]
+    permission_classes=[permissions.AllowAny]
     
 class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    permission_classes=[permissions.IsAuthenticatedOrReadOnly]
+    permission_classes=[permissions.AllowAny]
